@@ -3,31 +3,39 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simple Warikan</title>
-  <style>
-    .new-section {
-      border-top: 1px solid black;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
   <script src="index.js"></script>
 </head>
 
 <body>
-  <h1>Simple Warikan</h1>
-  <h3>寄付金</h3>
-  <div id="donation">
-    <input class="donation" type="number" placeholder="寄付金額を入力" />
+  <header>
+    <h1>Simple Warikan</h1>
+  </header>
+  <div class="main_container">
+    <h2>投げ銭</h2>
+    <div class="list_container" id="donation">
+      <div class="money_list">
+        <input class="donation" type="number" placeholder="0" />
+        <div>円</div>
+      </div>
+    </div>
+    <button onclick="addDonation()">追加</button>
+    <h2>払ったお金</h2>
+    <div class="list_container" id="paid">
+      <div class="money_list">
+        <input class="paid" type="number" placeholder="0" />
+        <div>円</div>
+      </div>
+    </div>
+    <button onclick="addPaid()">追加</button>
   </div>
-  <button onclick="addDonation()">追加</button>
-  <h3>割り付け人数</h3>
-  <input id="count" type="number" value="1" placeholder="人数を入力" />
-  <h3>支払い済みの金額</h3>
-  <div id="paid">
-    <input class="paid" type="number" placeholder="支払済みの金額を入力" />
-  </div>
-  <button onclick="addPaid()">追加</button>
-  <h3>結果</h3>
-  <div id="result">
+  <div class="result_container">
+    <div class="number_input">
+      <input id="count" type="number" value="1" placeholder="人数を入力" />で割り勘をする場合
+    </div>
+    <div id="result"></div>
   </div>
 </body>
 

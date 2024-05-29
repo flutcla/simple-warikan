@@ -10,28 +10,36 @@ window.onload = function () {
 
 function addDonation() {
   const donationDiv = document.getElementById("donation");
-  const div = document.createElement("div");
+  const parentDiv = document.createElement("div");
   var newDonation = document.createElement("input");
+  parentDiv.className = "money_list";
   newDonation.className = "donation";
   newDonation.type = "number";
-  newDonation.placeholder = "寄付金額を入力"
+  newDonation.placeholder = "0"
   newDonation.addEventListener("change", calculate);
 
-  donationDiv.appendChild(div);
-  donationDiv.appendChild(newDonation);
+  parentDiv.appendChild(newDonation);
+  donationDiv.appendChild(parentDiv);
+  var yen = document.createElement("div");
+  yen.innerHTML = "円";
+  parentDiv.appendChild(yen);
 }
 
 function addPaid() {
   const paidDiv = document.getElementById("paid");
-  const div = document.createElement("div");
+  const parentDiv = document.createElement("div");
   var newPaid = document.createElement("input");
+  parentDiv.className = "money_list";
   newPaid.className = "paid";
   newPaid.type = "number";
-  newPaid.placeholder = "支払済みの金額を入力"
+  newPaid.placeholder = "0"
   newPaid.addEventListener("change", calculate);
 
-  paidDiv.appendChild(div);
-  paidDiv.appendChild(newPaid);
+  parentDiv.appendChild(newPaid);
+  paidDiv.appendChild(parentDiv);
+  var yen = document.createElement("div");
+  yen.innerHTML = "円";
+  parentDiv.appendChild(yen);
 }
 
 class Person {
